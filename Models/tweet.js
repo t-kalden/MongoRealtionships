@@ -25,15 +25,15 @@ const tweetSchema = new Schema({
 const User = mongoose.model('User', userSchema);
 const Tweet = mongoose.model('Tweet', tweetSchema);
 
-// const makeTweets = async() => {
-//     // const user = new User({username: 'chickenfan99', age: 29});
-//     const user = await User.findOne({username: 'chickenfan99'})
-//     const tweet2 = new Tweet({text: "bock bock bock ", likes: 3420})
-//     tweet2.user = user;
-//     tweet2.save();
-// }
+const makeTweets = async() => {
+    // const user = new User({username: 'chickenfan99', age: 29});
+    const user = await User.findOne({username: 'chickenfan99'})
+    const tweet2 = new Tweet({text: "bock bock bock ", likes: 3420})
+    tweet2.user = user;
+    tweet2.save();
+}
 
-// makeTweets()
+makeTweets()
 
 const findTweet = async ()=> {
     const t = await Tweet.find({}).populate('user');
